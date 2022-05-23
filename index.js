@@ -3,7 +3,12 @@ const { Server } = require("socket.io");
 const app = require("./app");
 
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:8080", // TODO: Ganti jadi URL react-mu
+    methods: ["GET", "POST"],
+  },
+});
 
 io.on("connection", (socket) => {
   console.log("INFO:", "seseorang telah bergabung ke chat room!");
