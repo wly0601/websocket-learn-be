@@ -14,7 +14,8 @@ io.on("connection", (socket) => {
   console.log("INFO:", "seseorang telah bergabung ke chat room!");
 
   socket.on("chat message", (msg) => {
-    io.emit("chat message", msg);
+    console.log("INFO:", "incoming message", JSON.stringify(msg));
+    io.emit("incoming message", msg);
   });
 
   socket.on("disconnect", () => {
