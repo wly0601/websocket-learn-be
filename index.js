@@ -6,7 +6,7 @@ const server = http.createServer(app);
 const port = process.env.PORT || 8000
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:8080", // TODO: Ganti jadi URL react-mu
+    origin: "https://wly0601.github.io/websocket-learn/", // TODO: Ganti jadi URL react-mu
     methods: ["GET", "POST"],
   },
 });
